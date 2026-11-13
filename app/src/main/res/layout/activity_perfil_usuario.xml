@@ -7,7 +7,7 @@
     android:background="@color/brand_ivory"
     android:orientation="vertical">
 
-    <!-- ================= 1. TOP APP BAR (px-4 py-3.5 de Stitch) ================= -->
+    <!-- ================= 1. TOP APP BAR ================= -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -87,7 +87,7 @@
         android:layout_height="1dp"
         android:background="#4DC5A880" />
 
-    <!-- ================= 2. MAIN CONTENT (px-4 pt-5 pb-6 space-y-6 de Stitch) ================= -->
+    <!-- ================= 2. MAIN CONTENT ================= -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -177,7 +177,7 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
-            <!-- 2 Columnas: Avatar w-24 h-24 (96dp) + Metadatos (Sin Miembro Connoisseur) -->
+            <!-- 2 Columnas: Avatar (96dp) + Metadatos -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -338,7 +338,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- ===== SECCIÓN 2: BIOGRAFÍA (bg-white rounded-xl p-4) ===== -->
+            <!-- ===== SECCIÓN 2: BIOGRAFÍA ===== -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -394,7 +394,7 @@
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
-                <!-- Pill Switcher Compacto igual a Stitch -->
+                <!-- Pill Switcher Compacto -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
@@ -445,7 +445,7 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
-            <!-- Contenedor de 3 Columnas Iguales (100% visibles sin cortarse) -->
+            <!-- Contenedor de 3 Columnas Iguales -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -671,7 +671,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ===== SECCIÓN 4: MIS RESEÑAS (24) ===== -->
+            <!-- ===== SECCIÓN 4: MIS RESEÑAS (CON LISTVIEW Y CUSTOM ADAPTER) ===== -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -699,301 +699,16 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Review Card 1 (Gris Charnel Extrait) -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardMiResena1"
+            <!-- ListView oficial que carga el diseño personalizado item_mi_resena.xml -->
+            <ListView
+                android:id="@+id/lvMisResenasPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="@color/brand_surface"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="1dp"
-                app:strokeColor="@color/brand_border"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="14dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="top"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvPerfumeMiResena1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Gris Charnel Extrait"
-                                android:textColor="@color/brand_navy"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="★★★★★"
-                                    android:textColor="@color/brand_gold"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="4dp"
-                                    android:text="5.0"
-                                    android:textColor="@color/brand_navy"
-                                    android:textSize="11sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:cardBackgroundColor="@color/brand_ivory"
-                            app:cardCornerRadius="6dp"
-                            app:cardElevation="0dp"
-                            app:strokeColor="@color/brand_border"
-                            app:strokeWidth="1dp">
-
-                            <TextView
-                                android:id="@+id/tvTiendaMiResena1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingStart="8dp"
-                                android:paddingTop="3dp"
-                                android:paddingEnd="8dp"
-                                android:paddingBottom="3dp"
-                                android:text="Comprado en Silk Perfumes"
-                                android:textColor="@color/brand_muted"
-                                android:textSize="10sp" />
-                        </com.google.android.material.card.MaterialCardView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="top"
-                        android:orientation="horizontal">
-
-                        <!-- Foto evidencia w-16 h-16 (64dp) limpia igual a Stitch -->
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/cardEvidenciaMiResena1"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_marginEnd="12dp"
-                            app:cardBackgroundColor="#F4F3F1"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp"
-                            app:strokeColor="@color/brand_border"
-                            app:strokeWidth="1dp">
-
-                            <ImageView
-                                android:id="@+id/ivEvidenciaMiResena1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:contentDescription="Foto evidencia Gris Charnel"
-                                android:padding="14dp"
-                                android:scaleType="fitCenter"
-                                android:src="@android:drawable/ic_menu_camera"
-                                app:tint="@color/brand_gold_dark" />
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvComentarioMiResena1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:lineSpacingExtra="3dp"
-                                android:text="Excelente fijación de más de 10 horas. Proyección elegante sin ser abrumadora. Llegó en 24 hrs en perfectas condiciones."
-                                android:textColor="@color/brand_muted"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:id="@+id/tvUbicacionMiResena1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="📍 Santiago, Chile • Verificado"
-                                android:textColor="@color/brand_gold_dark"
-                                android:textSize="10.5sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Review Card 2 (Club de Nuit Milestone) -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardMiResena2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="265dp"
                 android:layout_marginBottom="24dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="@color/brand_surface"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="1dp"
-                app:strokeColor="@color/brand_border"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="14dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="top"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvPerfumeMiResena2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Club de Nuit Milestone"
-                                android:textColor="@color/brand_navy"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="★★★★★"
-                                    android:textColor="@color/brand_gold"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="4dp"
-                                    android:text="5.0"
-                                    android:textColor="@color/brand_navy"
-                                    android:textSize="11sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:cardBackgroundColor="@color/brand_ivory"
-                            app:cardCornerRadius="6dp"
-                            app:cardElevation="0dp"
-                            app:strokeColor="@color/brand_border"
-                            app:strokeWidth="1dp">
-
-                            <TextView
-                                android:id="@+id/tvTiendaMiResena2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingStart="8dp"
-                                android:paddingTop="3dp"
-                                android:paddingEnd="8dp"
-                                android:paddingBottom="3dp"
-                                android:text="Comprado en Falabella Luxe"
-                                android:textColor="@color/brand_muted"
-                                android:textSize="10sp" />
-                        </com.google.android.material.card.MaterialCardView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="top"
-                        android:orientation="horizontal">
-
-                        <!-- Foto evidencia w-16 h-16 (64dp) limpia igual a Stitch -->
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/cardEvidenciaMiResena2"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_marginEnd="12dp"
-                            app:cardBackgroundColor="#F4F3F1"
-                            app:cardCornerRadius="8dp"
-                            app:cardElevation="0dp"
-                            app:strokeColor="@color/brand_border"
-                            app:strokeWidth="1dp">
-
-                            <ImageView
-                                android:id="@+id/ivEvidenciaMiResena2"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:contentDescription="Foto evidencia Milestone"
-                                android:padding="14dp"
-                                android:scaleType="fitCenter"
-                                android:src="@android:drawable/ic_menu_camera"
-                                app:tint="@color/brand_gold_dark" />
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvComentarioMiResena2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:lineSpacingExtra="3dp"
-                                android:text="Apertura marina exquisita con secado salino muy adictivo. Excelente relación calidad/precio."
-                                android:textColor="@color/brand_muted"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:id="@+id/tvUbicacionMiResena2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="📍 Viña del Mar • Verificado"
-                                android:textColor="@color/brand_gold_dark"
-                                android:textSize="10.5sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:nestedScrollingEnabled="true"
+                tools:listitem="@layout/item_mi_resena" />
 
             <!-- ===== SECCIÓN 5: MIS SUGERENCIAS ENVIADAS ===== -->
             <TextView
@@ -1075,7 +790,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ===== SECCIÓN 6: BOTÓN CERRAR SESIÓN (Píldora igual a Stitch) ===== -->
+            <!-- ===== SECCIÓN 6: BOTÓN CERRAR SESIÓN ===== -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCerrarSesion"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
