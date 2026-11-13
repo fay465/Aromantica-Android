@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Aromantica" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/aromantica_primary</item>
+        <item name="android:statusBarColor">@color/aromantica_primary</item>
+    </style>
+
+    <style name="Theme.Aromantica" parent="Base.Theme.Aromantica" />
+</resources>

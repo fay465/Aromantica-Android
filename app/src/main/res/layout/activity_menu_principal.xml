@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_ivory"
+    android:orientation="vertical">
+
+    <!-- ================= 1. TOP APP BAR (FIJA ARRIBA) ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/brand_navy"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Botón Menú Hamburguesa -->
+        <TextView
+            android:id="@+id/btnMenuLateral"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="☰"
+            android:textColor="@color/brand_ivory"
+            android:textSize="20sp" />
+
+        <!-- Monograma circular dorado (Unificado con Login/Registro) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="#1AC5A880"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/brand_gold"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="✦"
+                android:textColor="@color/brand_gold"
+                android:textSize="13sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Título AROMÁNTICA -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:fontFamily="serif"
+            android:letterSpacing="0.15"
+            android:text="AROMÁNTICA"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Botón Circular Perfil (Derecha) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnHeaderPerfil"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#1AFFFFFF"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#66C5A880"
+            app:strokeWidth="1dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:contentDescription="Perfil de usuario"
+                android:src="@android:drawable/ic_menu_myplaces"
+                app:tint="@color/brand_gold" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- Línea divisoria dorada sutil -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brand_gold" />
+
+    <!-- ================= 2. CONTENIDO SCROLLEABLE ================= -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- ===== SECCIÓN BUSCADOR ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Caja de texto de búsqueda -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="Buscar"
+                            android:src="@android:drawable/ic_menu_search"
+                            app:tint="@color/brand_muted" />
+
+                        <EditText
+                            android:id="@+id/etBuscarHome"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:background="@null"
+                            android:hint="Buscar perfumes, notas..."
+                            android:imeOptions="actionSearch"
+                            android:inputType="text"
+                            android:textColor="@color/brand_navy"
+                            android:textColorHint="@color/brand_placeholder"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Botón Buscar -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBuscarHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="76dp"
+                    android:text="Buscar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/brand_navy"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+
+            <!-- ===== SECCIÓN DESTACADOS (CARRUSEL) ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Destacados"
+                    android:textColor="@color/brand_navy"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/brand_gold" />
+
+                <!-- Contenedor del Carrusel con tarjetas laterales y controles -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <!-- Tarjeta Lateral Izquierda (Semi-transparente) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="56dp"
+                            android:layout_height="260dp"
+                            android:layout_marginEnd="6dp"
+                            android:alpha="0.45"
+                            app:cardBackgroundColor="@color/brand_surface"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="1dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="135dp"
+                                    android:background="#EFECE6">
+
+                                    <ImageView
+                                        android:id="@+id/ivDestacadoIzq"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="Oud Wood"
+                                        android:scaleType="centerCrop"
+                                        android:src="@android:drawable/ic_menu_gallery"
+                                        app:tint="@color/brand_muted" />
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical"
+                                    android:padding="6dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:fontFamily="serif"
+                                        android:maxLines="1"
+                                        android:text="Oud Wood"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="9sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="Tom Ford"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="8sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- TARJETA CENTRAL PROTAGONISTA -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPerfumeDestacadoCentral"
+                            android:layout_width="232dp"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/brand_surface"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <!-- Mitad Superior: Imagen Dummy API REST + Badge EXTRAIT -->
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="165dp"
+                                    android:background="#F5F2EB">
+
+                                    <!-- ImageView principal (Se reemplaza por URL de API REST) -->
+                                    <ImageView
+                                        android:id="@+id/ivDestacadoCentral"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:contentDescription="Imagen perfume destacado"
+                                        android:padding="42dp"
+                                        android:scaleType="centerInside"
+                                        android:src="@android:drawable/ic_menu_gallery"
+                                        app:tint="@color/brand_gold_dark" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom|center_horizontal"
+                                        android:layout_marginBottom="10dp"
+                                        android:text="[ Imagen API REST ]"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="9sp" />
+
+                                    <!-- Badge EXTRAIT arriba a la derecha -->
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|end"
+                                        android:layout_margin="10dp"
+                                        app:cardBackgroundColor="@color/brand_navy"
+                                        app:cardCornerRadius="10dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeColor="@color/brand_gold"
+                                        app:strokeWidth="1dp">
+
+                                        <TextView
+                                            android:id="@+id/tvBadgeConcentracionDestacado"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:letterSpacing="0.08"
+                                            android:paddingStart="8dp"
+                                            android:paddingTop="3dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingBottom="3dp"
+                                            android:text="EXTRAIT"
+                                            android:textColor="@color/brand_gold"
+                                            android:textSize="9sp"
+                                            android:textStyle="bold" />
+                                    </com.google.android.material.card.MaterialCardView>
+                                </FrameLayout>
+
+                                <!-- Mitad Inferior: Detalles Editoriales del Perfume -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="14dp">
+
+                                    <TextView
+                                        android:id="@+id/tvCasaDestacado"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:letterSpacing="0.1"
+                                        android:text="BDK PARFUMS — PARÍS"
+                                        android:textColor="@color/brand_gold_dark"
+                                        android:textSize="9sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvNombreDestacado"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:fontFamily="serif"
+                                        android:text="Gris Charnel Extrait"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvNotasDestacado"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:ellipsize="end"
+                                        android:lineSpacingExtra="2dp"
+                                        android:maxLines="2"
+                                        android:text="Cardamomo, higo negro, té negro y sándalo cremoso de Mysore."
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="11sp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:background="@color/brand_border" />
+
+                                    <!-- Fila Precio y Botón Ver detalle -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:letterSpacing="0.08"
+                                                android:text="REFERENCIA"
+                                                android:textColor="@color/brand_muted"
+                                                android:textSize="8sp" />
+
+                                            <TextView
+                                                android:id="@+id/tvPrecioDestacado"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="$249.990 CLP"
+                                                android:textColor="@color/brand_navy"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/btnVerDetalleDestacado"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="32dp"
+                                            android:insetTop="0dp"
+                                            android:insetBottom="0dp"
+                                            android:minWidth="0dp"
+                                            android:paddingStart="12dp"
+                                            android:paddingEnd="12dp"
+                                            android:text="Ver detalle"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/brand_gold"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold"
+                                            app:backgroundTint="@color/brand_navy"
+                                            app:cornerRadius="8dp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Tarjeta Lateral Derecha (Semi-transparente) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="56dp"
+                            android:layout_height="260dp"
+                            android:layout_marginStart="6dp"
+                            android:alpha="0.45"
+                            app:cardBackgroundColor="@color/brand_surface"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="1dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="135dp"
+                                    android:background="#EFECE6">
+
+                                    <ImageView
+                                        android:id="@+id/ivDestacadoDer"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="Santal 33"
+                                        android:scaleType="centerCrop"
+                                        android:src="@android:drawable/ic_menu_gallery"
+                                        app:tint="@color/brand_muted" />
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical"
+                                    android:padding="6dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:fontFamily="serif"
+                                        android:maxLines="1"
+                                        android:text="Santal 33"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="9sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="Le Labo"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="8sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- Flecha Izquierda Carrusel -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnCarruselAnterior"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_vertical|start"
+                        android:layout_marginStart="14dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/brand_surface"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="@color/brand_border"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="‹"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Flecha Derecha Carrusel -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnCarruselSiguiente"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="14dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/brand_surface"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="@color/brand_border"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="›"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- ===== SECCIÓN 3 TARJETAS DE RESEÑAS DESTACADAS ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:weightSum="3">
+
+                <!-- Reseña 1 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            app:cardBackgroundColor="#EAE4DC"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_gold"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="SM"
+                                android:textColor="@color/brand_navy"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:singleLine="true"
+                            android:text="\@sofia.m"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="★ ★ ★ ★ ★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="8sp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="6dp"
+                            app:cardBackgroundColor="#F6F4EF"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:text="“Fijación de 12 hrs inigualable.”"
+                                android:textColor="@color/brand_muted"
+                                android:textSize="9sp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Reseña 2 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            app:cardBackgroundColor="#EAE4DC"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_gold"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="MV"
+                                android:textColor="@color/brand_navy"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:singleLine="true"
+                            android:text="\@matias.v"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="★ ★ ★ ★ ★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="8sp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="6dp"
+                            app:cardBackgroundColor="#F6F4EF"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:text="“Aroma adictivo y muy elegante.”"
+                                android:textColor="@color/brand_muted"
+                                android:textSize="9sp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Reseña 3 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            app:cardBackgroundColor="#EAE4DC"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_gold"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="CP"
+                                android:textColor="@color/brand_navy"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:singleLine="true"
+                            android:text="\@clara.p"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="★ ★ ★ ★ ★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="8sp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="6dp"
+                            app:cardBackgroundColor="#F6F4EF"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:text="“100% original, envío impecable.”"
+                                android:textColor="@color/brand_muted"
+                                android:textSize="9sp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- ===== SECCIÓN NOTICIAS DESTACADAS ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="serif"
+                    android:text="Noticias destacadas"
+                    android:textColor="@color/brand_navy"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardNoticiaDestacada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <!-- Bloque Izquierdo (Foto Noticia Dummy) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="115dp"
+                            android:layout_height="115dp"
+                            app:cardBackgroundColor="#E8E4DC"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:id="@+id/ivNoticiaDestacada"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Noticia destacada"
+                                android:padding="32dp"
+                                android:scaleType="centerInside"
+                                android:src="@android:drawable/ic_menu_gallery"
+                                app:tint="@color/brand_gold_dark" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Bloque Derecho (Texto Editorial Noticia) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:letterSpacing="0.1"
+                                android:text="TENDENCIAS 2026"
+                                android:textColor="@color/brand_gold_dark"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:ellipsize="end"
+                                android:fontFamily="serif"
+                                android:maxLines="2"
+                                android:text="El Renacer del Iris: La nota más aristocrática"
+                                android:textColor="@color/brand_navy"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:ellipsize="end"
+                                android:lineSpacingExtra="2dp"
+                                android:maxLines="2"
+                                android:text="Descubre cómo los maestros perfumistas reinventan la flor de lirio en composiciones nicho."
+                                android:textColor="@color/brand_muted"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/tvLeerArticuloNoticia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Leer artículo  →"
+                                android:textColor="@color/brand_navy"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ================= 3. BOTTOM NAVIGATION BAR (FIJA ABAJO) ================= -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brand_border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@color/brand_surface"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <!-- Tab 1: Inicio (Activo) -->
+        <LinearLayout
+            android:id="@+id/navInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/brand_gold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⌂"
+                android:textColor="@color/brand_navy"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="@color/brand_navy"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tab 2: Catálogo -->
+        <LinearLayout
+            android:id="@+id/navCatalogo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⊞"
+                android:textColor="@color/brand_muted"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catálogo"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Tab 3: Sugerir -->
+        <LinearLayout
+            android:id="@+id/navSugerir"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✦"
+                android:textColor="@color/brand_muted"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sugerir"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Tab 4: Perfil -->
+        <LinearLayout
+            android:id="@+id/navPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☺"
+                android:textColor="@color/brand_muted"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

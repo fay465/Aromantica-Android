@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta exacta de Stitch (Aromántica Editorial Luxury) -->
+    <color name="brand_navy">#0E1E2F</color>
+    <color name="brand_navy_dark">#08131E</color>
+    <color name="brand_gold">#C5A880</color>
+    <color name="brand_gold_light">#E8DCC4</color>
+    <color name="brand_gold_dark">#A08058</color>
+    <color name="brand_ivory">#FAF9F6</color>
+    <color name="brand_surface">#FFFFFF</color>
+    <color name="brand_border">#E8E5DF</color>
+    <color name="brand_muted">#717882</color>
+    <color name="brand_subtitle">#D1D5DB</color>
+    <color name="brand_placeholder">#9CA3AF</color>
+</resources>

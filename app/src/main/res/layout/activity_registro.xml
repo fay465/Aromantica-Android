@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_ivory"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ================= HEADER EDITORIAL LUXURY (UNIFICADO) ================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/brand_navy"
+            android:orientation="vertical"
+            android:paddingStart="28dp"
+            android:paddingTop="44dp"
+            android:paddingEnd="28dp"
+            android:paddingBottom="32dp">
+
+            <!-- Barra superior: Monograma circular dorado + Tagline (Idéntico al Login) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:cardBackgroundColor="#1AC5A880"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#66C5A880"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="✦"
+                        android:textColor="@color/brand_gold"
+                        android:textSize="13sp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:letterSpacing="0.2"
+                    android:text="PERFUMES, RESEÑAS Y COMPARATIVAS"
+                    android:textColor="@color/brand_gold_light"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Etiqueta de sección: "— NUEVA CUENTA" -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="1.5dp"
+                    android:background="@color/brand_gold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:letterSpacing="0.18"
+                    android:text="NUEVA CUENTA"
+                    android:textColor="@color/brand_gold"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Título Principal -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Únete a Aromántica."
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <!-- Subtítulo descriptivo -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Crea tu perfil para guardar colecciones, reseñas y descubrir notas exclusivas."
+                android:textColor="@color/brand_subtitle"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Línea divisoria dorada sutil bajo el Header -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/brand_gold" />
+
+        <!-- ================= CUERPO DEL FORMULARIO DE REGISTRO ================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="28dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="28dp">
+
+            <!-- Fila 1 (Grid 2 columnas): Nombre y Apellido -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- Columna Izquierda: Nombre -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:text="Nombre"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/brand_surface"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="1dp"
+                        app:strokeColor="@color/brand_border"
+                        app:strokeWidth="1dp">
+
+                        <EditText
+                            android:id="@+id/etNombreRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@null"
+                            android:hint="Tu nombre"
+                            android:inputType="textPersonName"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:textColor="@color/brand_navy"
+                            android:textColorHint="@color/brand_placeholder"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- Columna Derecha: Apellido -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:text="Apellido"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/brand_surface"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="1dp"
+                        app:strokeColor="@color/brand_border"
+                        app:strokeWidth="1dp">
+
+                        <EditText
+                            android:id="@+id/etApellidoRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@null"
+                            android:hint="Tu apellido"
+                            android:inputType="textPersonName"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:textColor="@color/brand_navy"
+                            android:textColorHint="@color/brand_placeholder"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Campo 2: Nombre de usuario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Nombre de usuario"
+                android:textColor="@color/brand_navy"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/etUsernameRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@null"
+                    android:hint="Introduce tu nombre de usuario"
+                    android:inputType="text"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:textColor="@color/brand_navy"
+                    android:textColorHint="@color/brand_placeholder"
+                    android:textSize="14sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo 3: Correo electrónico -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Correo electrónico"
+                android:textColor="@color/brand_navy"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/etEmailRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@null"
+                    android:hint="tu@correo.com"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:textColor="@color/brand_navy"
+                    android:textColorHint="@color/brand_placeholder"
+                    android:textSize="14sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo 4: Fecha de nacimiento -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Fecha de nacimiento"
+                android:textColor="@color/brand_navy"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp">
+
+                    <EditText
+                        android:id="@+id/etFechaNacimientoRegistro"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="dd - mm - aaaa"
+                        android:inputType="date"
+                        android:textColor="@color/brand_navy"
+                        android:textColorHint="@color/brand_placeholder"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/ivCalendarioFecha"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="Seleccionar fecha"
+                        android:src="@android:drawable/ic_menu_my_calendar"
+                        app:tint="@color/brand_muted" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo 5: Género (Spinner nativo estilizado) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Género"
+                android:textColor="@color/brand_navy"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <Spinner
+                    android:id="@+id/spGeneroRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:entries="@array/opciones_genero"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="14dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo 6: Contraseña -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Contraseña"
+                android:textColor="@color/brand_navy"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundMode="none"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/brand_muted"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasswordRegistro"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:hint="Introduce tu contraseña"
+                        android:inputType="textPassword"
+                        android:paddingStart="14dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="40dp"
+                        android:paddingBottom="0dp"
+                        android:textColor="@color/brand_navy"
+                        android:textColorHint="@color/brand_placeholder"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campo 7: Confirmar contraseña -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Confirmar contraseña"
+                android:textColor="@color/brand_navy"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundMode="none"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/brand_muted"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etConfirmPasswordRegistro"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:hint="Confirma tu contraseña"
+                        android:inputType="textPassword"
+                        android:paddingStart="14dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="40dp"
+                        android:paddingBottom="0dp"
+                        android:textColor="@color/brand_navy"
+                        android:textColorHint="@color/brand_placeholder"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Aviso legal Términos y Privacidad -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:text="Al registrarte aceptas nuestros Términos de servicio y Política de privacidad."
+                android:textColor="@color/brand_muted"
+                android:textSize="11sp" />
+
+            <!-- Botón Primario: Registrar -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegistrarUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="10dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Registrar   →"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/brand_navy"
+                app:cornerRadius="8dp"
+                app:elevation="2dp" />
+
+            <!-- Botón Secundario: Volver -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVolverLogin"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Volver"
+                android:textAllCaps="false"
+                android:textColor="@color/brand_navy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/brand_surface"
+                app:cornerRadius="8dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp" />
+
+            <!-- ================= FOOTER UNIFICADO ================= -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="14dp"
+                android:background="@color/brand_border" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Alta Perfumería © 2026 Aromántica. Todos los derechos reservados."
+                android:textColor="@color/brand_muted"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

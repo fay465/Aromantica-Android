@@ -1,0 +1,2042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_ivory"
+    android:orientation="vertical">
+
+    <!-- ================= 1. TOP APP BAR (UNIFICADA Y FIJA ARRIBA) ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/brand_navy"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/btnMenuLateralPerfume"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="☰"
+            android:textColor="@color/brand_ivory"
+            android:textSize="20sp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="#1AC5A880"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/brand_gold"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="✦"
+                android:textColor="@color/brand_gold"
+                android:textSize="13sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:fontFamily="serif"
+            android:letterSpacing="0.15"
+            android:text="AROMÁNTICA"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnHeaderPerfilPerfume"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#1AFFFFFF"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#66C5A880"
+            app:strokeWidth="1dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:contentDescription="Perfil de usuario"
+                android:src="@android:drawable/ic_menu_myplaces"
+                app:tint="@color/brand_gold" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brand_gold" />
+
+    <!-- ================= 2. CONTENIDO SCROLLEABLE ================= -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="28dp">
+
+            <!-- ===== BARRA DE BÚSQUEDA RÁPIDA ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="Buscar"
+                        android:src="@android:drawable/ic_menu_search"
+                        app:tint="@color/brand_gold" />
+
+                    <EditText
+                        android:id="@+id/etBuscarEnDetalle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:background="@null"
+                        android:hint="Buscar otro perfume, casa o nota..."
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:textColor="@color/brand_navy"
+                        android:textColorHint="@color/brand_placeholder"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== FICHA PRINCIPAL DEL PERFUME ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Nombre del Perfume y Casa Perfumera -->
+                    <TextView
+                        android:id="@+id/tvTituloPerfumeDetalle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="Gris Charnel Extrait  |  BDK Parfums"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <!-- Subtítulo: Concentración y Género -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="14dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:background="@color/brand_gold" />
+
+                        <TextView
+                            android:id="@+id/tvSubtituloPerfumeDetalle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:letterSpacing="0.06"
+                            android:text="EXTRAIT DE PARFUM • UNISEX / ORIENTAL ESPECIADO"
+                            android:textColor="@color/brand_muted"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- FILA SUPERIOR (2 COLUMNAS CALZADAS EN ALTURA): FOTO + ACORDES -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="12">
+
+                        <!-- Columna Izquierda (5/12): Foto del Perfume -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="172dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="5"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:id="@+id/ivFotoPerfumeDetalle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="Frasco del perfume"
+                                    android:padding="22dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <!-- Etiqueta NICHE -->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top|start"
+                                    app:cardBackgroundColor="@color/brand_navy"
+                                    app:cardCornerRadius="4dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="6dp"
+                                        android:paddingTop="2dp"
+                                        android:paddingEnd="6dp"
+                                        android:paddingBottom="2dp"
+                                        android:text="NICHE"
+                                        android:textColor="@color/brand_gold"
+                                        android:textSize="8sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </FrameLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Columna Derecha (7/12): Acordes Principales -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:letterSpacing="0.08"
+                                android:text="ACORDES PRINCIPALES"
+                                android:textColor="@color/brand_navy"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@color/brand_border" />
+
+                            <!-- Acorde 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvAcorde1Nombre"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Amaderado cremoso"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/tvAcorde1Porcentaje"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="85%"
+                                    android:textColor="@color/brand_muted"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/pbAcorde1"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="7dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="8dp"
+                                android:max="100"
+                                android:progress="85"
+                                android:progressBackgroundTint="@color/brand_border"
+                                android:progressTint="@color/brand_gold_dark" />
+
+                            <!-- Acorde 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvAcorde2Nombre"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Especiado cálido"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/tvAcorde2Porcentaje"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="75%"
+                                    android:textColor="@color/brand_muted"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/pbAcorde2"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="7dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="8dp"
+                                android:max="100"
+                                android:progress="75"
+                                android:progressBackgroundTint="@color/brand_border"
+                                android:progressTint="@color/brand_gold_dark" />
+
+                            <!-- Acorde 3 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvAcorde3Nombre"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Higo dulce y Té"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/tvAcorde3Porcentaje"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="65%"
+                                    android:textColor="@color/brand_muted"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/pbAcorde3"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="7dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="8dp"
+                                android:max="100"
+                                android:progress="65"
+                                android:progressBackgroundTint="@color/brand_border"
+                                android:progressTint="@color/brand_gold_dark" />
+
+                            <!-- Acorde 4 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvAcorde4Nombre"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Iris / Atalcado"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:id="@+id/tvAcorde4Porcentaje"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="50%"
+                                    android:textColor="@color/brand_muted"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/pbAcorde4"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="7dp"
+                                android:layout_marginTop="3dp"
+                                android:max="100"
+                                android:progress="50"
+                                android:progressBackgroundTint="@color/brand_border"
+                                android:progressTint="@color/brand_gold_dark" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- FILA INFERIOR EN 3 COLUMNAS: DURACIÓN | ESTELA | CLIMA -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <!-- Columna 1: Duración -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:letterSpacing="0.06"
+                                    android:text="DURACIÓN"
+                                    android:textColor="@color/brand_gold_dark"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvDuracionPerfume"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:gravity="center"
+                                    android:text="Alta (8-10 hrs)"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Columna 2: Estela -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:letterSpacing="0.06"
+                                    android:text="ESTELA"
+                                    android:textColor="@color/brand_gold_dark"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvEstelaPerfume"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:gravity="center"
+                                    android:text="Moderada"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Columna 3: Clima -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="4dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:letterSpacing="0.06"
+                                    android:text="CLIMA"
+                                    android:textColor="@color/brand_gold_dark"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvClimaPerfume"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:gravity="center"
+                                    android:text="Otoño / Invierno"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== FILA DE 3 BOTONES DE ACCIÓN RÁPIDA ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <!-- Botón 1: A mi colección -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnAgregarColeccion"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/brand_navy"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="❖"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="A mi colección"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Botón 2: Deseados -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnAgregarDeseados"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_gold"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="♡"
+                            android:textColor="@color/brand_gold_dark"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Deseados"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Botón 3: Reseñar -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnIrResenarProducto"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✎"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Reseñar"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- ===== SECCIÓN DÓNDE COMPRAR (SIN EL BADGE "CLP ACTUALIZADO") ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#F5F2EB"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Encabezado limpio a ancho completo -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="Dónde comprar"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="12dp"
+                        android:text="Disponibilidad y mejores ofertas en tiendas de Chile"
+                        android:textColor="@color/brand_muted"
+                        android:textSize="11sp" />
+
+                    <!-- Carrusel Horizontal de Tiendas -->
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <!-- Tienda 1: Silk Perfumes (Mejor Precio) -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="185dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                app:cardBackgroundColor="@color/brand_surface"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="1dp"
+                                app:strokeColor="@color/brand_gold"
+                                app:strokeWidth="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <!-- Etiqueta Mejor Precio -->
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_marginBottom="4dp"
+                                        android:background="@color/brand_gold"
+                                        android:paddingStart="6dp"
+                                        android:paddingTop="2dp"
+                                        android:paddingEnd="6dp"
+                                        android:paddingBottom="2dp"
+                                        android:text="MEJOR PRECIO"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="8sp"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:layout_width="26dp"
+                                            android:layout_height="26dp"
+                                            app:cardBackgroundColor="@color/brand_navy"
+                                            app:cardCornerRadius="6dp"
+                                            app:cardElevation="0dp">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:gravity="center"
+                                                android:text="S"
+                                                android:textColor="@color/brand_gold"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                        <TextView
+                                            android:id="@+id/tvNombreTienda1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="8dp"
+                                            android:text="Silk Perfumes"
+                                            android:textColor="@color/brand_navy"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/tvPrecioTienda1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:text="$249.990"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvCantidadTienda1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Cantidad: 100 ml"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="11sp" />
+
+                                    <TextView
+                                        android:id="@+id/tvPrecioMlTienda1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Precio/ml: $2.499"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="11sp" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnIrTienda1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="36dp"
+                                        android:layout_marginTop="10dp"
+                                        android:insetTop="0dp"
+                                        android:insetBottom="0dp"
+                                        android:text="Ir a tienda ↗"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold"
+                                        app:backgroundTint="@color/brand_navy"
+                                        app:cornerRadius="8dp" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!-- Tienda 2: Falabella Luxe -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="185dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                app:cardBackgroundColor="@color/brand_surface"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="1dp"
+                                app:strokeColor="@color/brand_border"
+                                app:strokeWidth="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:layout_width="26dp"
+                                            android:layout_height="26dp"
+                                            app:cardBackgroundColor="#25722E"
+                                            app:cardCornerRadius="6dp"
+                                            app:cardElevation="0dp">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:gravity="center"
+                                                android:text="F"
+                                                android:textColor="@color/white"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                        <TextView
+                                            android:id="@+id/tvNombreTienda2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="8dp"
+                                            android:text="Falabella Luxe"
+                                            android:textColor="@color/brand_navy"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/tvPrecioTienda2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:text="$264.990"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvCantidadTienda2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Cantidad: 100 ml"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="11sp" />
+
+                                    <TextView
+                                        android:id="@+id/tvPrecioMlTienda2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Precio/ml: $2.649"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="11sp" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnIrTienda2"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="36dp"
+                                        android:layout_marginTop="10dp"
+                                        android:insetTop="0dp"
+                                        android:insetBottom="0dp"
+                                        android:text="Ir a tienda ↗"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold"
+                                        app:backgroundTint="#F2F4F7"
+                                        app:cornerRadius="8dp"
+                                        app:strokeColor="@color/brand_border"
+                                        app:strokeWidth="1dp" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <!-- Tienda 3: Elite Perfumes -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="185dp"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/brand_surface"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="1dp"
+                                app:strokeColor="@color/brand_border"
+                                app:strokeWidth="1dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="12dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:layout_width="26dp"
+                                            android:layout_height="26dp"
+                                            app:cardBackgroundColor="@color/brand_gold"
+                                            app:cardCornerRadius="6dp"
+                                            app:cardElevation="0dp">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:gravity="center"
+                                                android:text="E"
+                                                android:textColor="@color/brand_navy"
+                                                android:textSize="12sp"
+                                                android:textStyle="bold" />
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                        <TextView
+                                            android:id="@+id/tvNombreTienda3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="8dp"
+                                            android:text="Elite Perfumes"
+                                            android:textColor="@color/brand_navy"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/tvPrecioTienda3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:text="$139.990"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvCantidadTienda3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Cantidad: 50 ml"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="11sp" />
+
+                                    <TextView
+                                        android:id="@+id/tvPrecioMlTienda3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Precio/ml: $2.799"
+                                        android:textColor="@color/brand_muted"
+                                        android:textSize="11sp" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/btnIrTienda3"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="36dp"
+                                        android:layout_marginTop="10dp"
+                                        android:insetTop="0dp"
+                                        android:insetBottom="0dp"
+                                        android:text="Ir a tienda ↗"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/brand_navy"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold"
+                                        app:backgroundTint="#F2F4F7"
+                                        app:cornerRadius="8dp"
+                                        app:strokeColor="@color/brand_border"
+                                        app:strokeWidth="1dp" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <!-- Indicador visual de barra de desplazamiento horizontal -->
+                    <FrameLayout
+                        android:layout_width="96dp"
+                        android:layout_height="5dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/brand_border">
+
+                        <View
+                            android:layout_width="34dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/brand_navy" />
+                    </FrameLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== SECCIÓN PIRÁMIDE OLFATIVA ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:text="Pirámide Olfativa"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- NIVEL 1: NOTAS DE SALIDA -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/brand_border" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:letterSpacing="0.08"
+                            android:text="NOTAS DE SALIDA"
+                            android:textColor="@color/brand_muted"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/brand_border" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaSalida1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Higo Negro"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaSalida2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Cardamomo"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaSalida3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Té Negro"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- NIVEL 2: NOTAS DE CORAZÓN -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/brand_border" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:letterSpacing="0.08"
+                            android:text="NOTAS DE CORAZÓN"
+                            android:textColor="@color/brand_muted"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/brand_border" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaCorazon1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Iris Florencia"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaCorazon2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Vetiver Bourbon"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaCorazon3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Labdanum"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- NIVEL 3: NOTAS BASE -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/brand_border" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:letterSpacing="0.08"
+                            android:text="NOTAS BASE"
+                            android:textColor="@color/brand_muted"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/brand_border" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaBase1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Sándalo"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaBase2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Haba Tonka"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/brand_ivory"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:layout_width="42dp"
+                                    android:layout_height="42dp"
+                                    android:src="@android:drawable/ic_menu_gallery"
+                                    app:tint="@color/brand_gold_dark" />
+
+                                <TextView
+                                    android:id="@+id/tvNotaBase3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:text="Cedro"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== BLOQUE DE SUGERENCIA COMUNITARIA ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="¿Crees que le falta información a esta ficha?"
+                    android:textColor="@color/brand_muted"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSugerirDesdePerfume"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:text="⊕  Sugiere una categoría o acorde"
+                    android:textAllCaps="false"
+                    android:textColor="@color/brand_navy"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#EAE8E3"
+                    app:cornerRadius="20dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp" />
+            </LinearLayout>
+
+            <!-- ===== SECCIÓN RESEÑAS DE LA COMUNIDAD (CON FOTO EVIDENCIA OPCIONAL) ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F6F5F2"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Encabezado de Reseñas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="serif"
+                                android:text="Reseñas de la Comunidad"
+                                android:textColor="@color/brand_navy"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvContadorResenas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="148 opiniones de compra y producto"
+                                android:textColor="@color/brand_muted"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/brand_surface"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/brand_border"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingTop="4dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="4dp">
+
+                                <TextView
+                                    android:id="@+id/tvPromedioEstrellas"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4.8"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:text="★★★★★"
+                                    android:textColor="@color/brand_gold"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@color/brand_border" />
+
+                    <!-- RESEÑA 1: CON FOTO DE EVIDENCIA ADJUNTA -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="@color/brand_surface"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/brand_border"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvAutorResena1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Valentina M."
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="#ECFDF5"
+                                    android:paddingStart="6dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingEnd="6dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Silk Perfumes • Recibido"
+                                    android:textColor="#065F46"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="★★★★★"
+                                    android:textColor="@color/brand_gold"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <!-- Recuadro de Foto de Evidencia (Opcional: se oculta con visibility="gone" si no hay foto) -->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardEvidenciaResena1"
+                                    android:layout_width="68dp"
+                                    android:layout_height="68dp"
+                                    android:layout_marginEnd="10dp"
+                                    app:cardBackgroundColor="#F5F2EB"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/brand_gold"
+                                    app:strokeWidth="1dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:padding="4dp">
+
+                                        <ImageView
+                                            android:id="@+id/ivEvidenciaResena1"
+                                            android:layout_width="24dp"
+                                            android:layout_height="24dp"
+                                            android:contentDescription="Foto de evidencia del producto"
+                                            android:src="@android:drawable/ic_menu_camera"
+                                            app:tint="@color/brand_gold_dark" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="2dp"
+                                            android:gravity="center"
+                                            android:text="Foto\nevidencia"
+                                            android:textColor="@color/brand_muted"
+                                            android:textSize="8sp" />
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:id="@+id/tvTextoResena1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:lineSpacingExtra="2dp"
+                                    android:text="“El envío de Silk Perfumes llegó en 48 hrs muy bien protegido. El higo y el té negro se sienten refinados y el batch es 100% original.”"
+                                    android:textColor="@color/brand_muted"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- RESEÑA 2: EJEMPLO SIN FOTO DE EVIDENCIA (OPCIONAL OCULTO) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/brand_surface"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/brand_border"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvAutorResena2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Carlos Mendoza"
+                                    android:textColor="@color/brand_navy"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="#ECFDF5"
+                                    android:paddingStart="6dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingEnd="6dp"
+                                    android:paddingBottom="2dp"
+                                    android:text="Falabella • Recibido"
+                                    android:textColor="#065F46"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+
+                                <Space
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="★★★★★"
+                                    android:textColor="@color/brand_gold"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <!-- Evidencia opcional oculta por defecto en esta reseña para mostrar que es opcional -->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardEvidenciaResena2"
+                                    android:layout_width="68dp"
+                                    android:layout_height="68dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:visibility="gone"
+                                    app:cardBackgroundColor="#F5F2EB"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="@color/brand_gold"
+                                    app:strokeWidth="1dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivEvidenciaResena2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:contentDescription="Foto de evidencia"
+                                        android:padding="18dp"
+                                        android:src="@android:drawable/ic_menu_camera"
+                                        app:tint="@color/brand_gold_dark" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <TextView
+                                    android:id="@+id/tvTextoResena2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:lineSpacingExtra="2dp"
+                                    android:text="“La versión Extrait eleva por completo al EDP original. El cardamomo inicial es adictivo y el secado de sándalo dura toda la jornada.”"
+                                    android:textColor="@color/brand_muted"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ================= 3. BOTTOM NAVIGATION BAR (UNIFICADA Y FIJA ABAJO) ================= -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brand_border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@color/brand_surface"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <!-- Tab 1: Inicio -->
+        <LinearLayout
+            android:id="@+id/navInicioPerfume"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⌂"
+                android:textColor="@color/brand_muted"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Tab 2: Catálogo (Activo) -->
+        <LinearLayout
+            android:id="@+id/navCatalogoPerfume"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/brand_gold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⊞"
+                android:textColor="@color/brand_navy"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catálogo"
+                android:textColor="@color/brand_navy"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tab 3: Sugerir -->
+        <LinearLayout
+            android:id="@+id/navSugerirPerfume"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✦"
+                android:textColor="@color/brand_muted"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sugerir"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Tab 4: Perfil -->
+        <LinearLayout
+            android:id="@+id/navPerfilPerfume"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☺"
+                android:textColor="@color/brand_muted"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

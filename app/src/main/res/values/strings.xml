@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Aromántica</string>
+
+    <string-array name="opciones_genero">
+        <item>Selecciona tu género</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>No binario</item>
+        <item>Prefiero no decir</item>
+    </string-array>
+
+    <string-array name="opciones_tiendas">
+        <item>Silk Perfumes</item>
+        <item>DBS Beauty Store</item>
+        <item>Falabella Retail</item>
+        <item>Elite Perfumes</item>
+        <item>Otra tienda oficial</item>
+    </string-array>
+</resources>

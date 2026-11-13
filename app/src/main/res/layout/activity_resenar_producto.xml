@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_ivory"
+    android:orientation="vertical">
+
+    <!-- ================= 1. TOP APP BAR (UNIFICADA Y FIJA ARRIBA) ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/brand_navy"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/btnMenuLateralResena"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="☰"
+            android:textColor="@color/brand_ivory"
+            android:textSize="20sp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="#1AC5A880"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/brand_gold"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="✦"
+                android:textColor="@color/brand_gold"
+                android:textSize="13sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:fontFamily="serif"
+            android:letterSpacing="0.15"
+            android:text="AROMÁNTICA"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnHeaderPerfilResena"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#1AFFFFFF"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#66C5A880"
+            app:strokeWidth="1dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:contentDescription="Perfil de usuario"
+                android:src="@android:drawable/ic_menu_myplaces"
+                app:tint="@color/brand_gold" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brand_gold" />
+
+    <!-- ================= 2. CONTENIDO SCROLLEABLE ================= -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="22dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="28dp">
+
+            <!-- ===== ENCABEZADO Y PRODUCTO OBJETIVO ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.14"
+                android:text="RESEÑA DE COMPRA  •  VERIFICACIÓN"
+                android:textColor="@color/brand_gold_dark"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="serif"
+                android:text="Danos tu opinión"
+                android:textColor="@color/brand_navy"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- Tarjeta del Perfume seleccionado -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="14dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.06"
+                        android:text="PERFUME:"
+                        android:textColor="@color/brand_muted"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvNombrePerfumeResena"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Rasasi Hawas for Him EDP"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <!-- Badge 100 ml -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#26C5A880"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#66C5A880"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/tvFormatoPerfumeResena"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="3dp"
+                            android:text="100 ml"
+                            android:textColor="@color/brand_gold_dark"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== BLOQUE DE 2 COLUMNAS: CÁMARA (45%) + DATOS TIENDA (55%) ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="12">
+
+                <!-- Columna Izquierda (5/12): Botón / Vista Previa de Cámara -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnCapturarFotoEvidencia"
+                    android:layout_width="0dp"
+                    android:layout_height="168dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_weight="5"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/brand_surface"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:strokeColor="@color/brand_gold"
+                    app:strokeWidth="1.5dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Estado inicial: Ícono cámara + Instrucción -->
+                        <LinearLayout
+                            android:id="@+id/layoutPlaceholderCamara"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:layout_marginBottom="8dp"
+                                app:cardBackgroundColor="#120E1E2F"
+                                app:cardCornerRadius="21dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="Abrir cámara"
+                                    android:src="@android:drawable/ic_menu_camera"
+                                    app:tint="@color/brand_navy" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:lineSpacingExtra="2dp"
+                                android:text="Añadir Foto\nProducto Recibido"
+                                android:textColor="@color/brand_muted"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:letterSpacing="0.1"
+                                android:text="SUBIR"
+                                android:textColor="@color/brand_gold_dark"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Vista previa de la foto tomada con la cámara (oculta hasta capturar) -->
+                        <ImageView
+                            android:id="@+id/ivFotoEvidenciaCapturada"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="Foto capturada del producto"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Columna Derecha (7/12): Recepción, Tienda y Estrellas -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:orientation="vertical">
+
+                    <!-- 1. ¿Recibiste tu producto? -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿Recibiste tu producto?"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rgRecibioProducto"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbRecibidoSi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="18dp"
+                            android:buttonTint="@color/brand_navy"
+                            android:checked="true"
+                            android:text="Sí"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rbRecibidoNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/brand_muted"
+                            android:text="No"
+                            android:textColor="@color/brand_muted"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+
+                    <!-- 2. Selector de Tienda -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:letterSpacing="0.06"
+                        android:text="TIENDA"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="@color/brand_surface"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/brand_border"
+                        app:strokeWidth="1dp">
+
+                        <Spinner
+                            android:id="@+id/spTiendaResena"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:entries="@array/opciones_tiendas"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 3. Evaluación de la tienda -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:letterSpacing="0.06"
+                        android:text="EVALUACIÓN DE LA TIENDA"
+                        android:textColor="@color/brand_navy"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvEstrella1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingEnd="4dp"
+                            android:text="★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvEstrella2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingEnd="4dp"
+                            android:text="★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvEstrella3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingEnd="4dp"
+                            android:text="★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvEstrella4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingEnd="4dp"
+                            android:text="★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvEstrella5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingEnd="8dp"
+                            android:text="★"
+                            android:textColor="@color/brand_gold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvPuntajeTiendaResena"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5.0"
+                            android:textColor="@color/brand_navy"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===== SECCIÓN COMENTARIOS DE LA TIENDA ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Comentarios de la tienda"
+                android:textColor="@color/brand_navy"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/etComentariosTienda"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:background="@null"
+                    android:gravity="top|start"
+                    android:hint="Escribe tu experiencia con el envío, embalaje y autenticidad del producto..."
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:lineSpacingExtra="3dp"
+                    android:padding="14dp"
+                    android:textColor="@color/brand_navy"
+                    android:textColorHint="@color/brand_placeholder"
+                    android:textSize="13sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ===== MÓDULO DE UBICACIÓN GPS (OPCIONAL) ===== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Añadir tu ubicación (opcional)"
+                android:textColor="@color/brand_navy"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/brand_surface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/brand_border"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📍"
+                        android:textColor="@color/brand_gold"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etUbicacionGps"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:ellipsize="end"
+                        android:hint="Presiona Obtener GPS..."
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:text="Los Ángeles, Región del Biobío (-37.46, -72.35)"
+                        android:textColor="@color/brand_navy"
+                        android:textColorHint="@color/brand_placeholder"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnObtenerGps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minWidth="0dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Obtener GPS"
+                        android:textAllCaps="false"
+                        android:textColor="@color/brand_ivory"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/brand_navy"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Aviso de privacidad bajo el GPS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="26dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔒"
+                    android:textColor="@color/brand_gold_dark"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="No vamos a compartir tus datos con nadie"
+                    android:textColor="@color/brand_muted"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- ===== FILA DE BOTONES DE ACCIÓN (CANCELAR + PUBLICAR RESEÑA) ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <!-- Botón Secundario: Cancelar (1/3) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelarResena"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="Cancelar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/brand_muted"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/brand_surface"
+                    app:cornerRadius="24dp"
+                    app:strokeColor="@color/brand_border"
+                    app:strokeWidth="1dp" />
+
+                <!-- Botón Primario: Publicar reseña (2/3) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPublicarResena"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="2"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="Publicar reseña   →"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/brand_navy"
+                    app:cornerRadius="24dp"
+                    app:elevation="2dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ================= 3. BOTTOM NAVIGATION BAR (UNIFICADA Y FIJA ABAJO) ================= -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brand_border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@color/brand_surface"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <!-- Tab 1: Inicio -->
+        <LinearLayout
+            android:id="@+id/navInicioResena"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⌂"
+                android:textColor="@color/brand_muted"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Tab 2: Catálogo (Activo porque se reseña desde un perfume del catálogo) -->
+        <LinearLayout
+            android:id="@+id/navCatalogoResena"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/brand_gold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⊞"
+                android:textColor="@color/brand_navy"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catálogo"
+                android:textColor="@color/brand_navy"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tab 3: Sugerir -->
+        <LinearLayout
+            android:id="@+id/navSugerirResena"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✦"
+                android:textColor="@color/brand_muted"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sugerir"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Tab 4: Perfil -->
+        <LinearLayout
+            android:id="@+id/navPerfilResena"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☺"
+                android:textColor="@color/brand_muted"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textColor="@color/brand_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
